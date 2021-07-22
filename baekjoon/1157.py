@@ -1,5 +1,5 @@
 word = input().strip()
-word = word.lower()
+word = word.upper()
 word_dic={}
 
 for letter in word:
@@ -7,6 +7,10 @@ for letter in word:
         word_dic[letter] +=1
     else:
         word_dic[letter] = 1
-#get(x) 함수는 x라는 Key에 대응되는 Value를 돌려준다.
-print(word_dic)
-max_value = max(word_dic,)
+
+#if max value and key's value same  Add list Key
+results = [k for k,v in word_dic.items() if max(word_dic.values()) == v]
+if len(results) >1:
+    print("?")
+else:
+    print(results[0])
