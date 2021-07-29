@@ -10,4 +10,4 @@ for i in range(4, N + 1) :
     if i % 3 == 0 :
         dp_list[i] = min(dp_list[i], dp_list[i//3] + 1)
 
-print(dp_list[-1])
+print(dp_list[N])
