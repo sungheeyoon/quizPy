@@ -32,7 +32,7 @@ for i in range(0,M):
         graph[B] = [A]
 for value in graph.values():
     value.sort()
-
+print(graph)
 dfs(graph, V)
 print()
 bfs(graph, V)
