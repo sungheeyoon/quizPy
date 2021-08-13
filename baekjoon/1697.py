@@ -1,23 +1,20 @@
 from collections import deque
-
-n, k = map(int, input().split())
-graph = [-1] * 100001
-dq = [1, -1, 2]
-
-def bfs(start):
-    queue = deque()
-    queue.append(start)
-    graph[start] = 0
-    
-    while queue:
-        q = queue.popleft()
-        
-        for i in dq:
-            nq = q * 2 if i == 2 else q + i
-            if 0 <= nq <= 100000 and graph[nq] == -1:
-                queue.append(nq)
-                graph[nq] = graph[q] + 1
-            if nq == k:
-                return graph[nq]
-
-print(bfs(n))
+def bfs():
+     ans = -1 
+     que = deque() 
+     que.append(n) 
+     while que:
+          ans+=1 
+          for _ in range(len(que)):
+            x = que.popleft() 
+            if x == k: 
+                   return ans 
+            for i in (x-1, x+1, x*2):
+                 if 0<=i<=100000 and num[i]==0:
+                      num[i]=1 
+                      que.append(i) 
+                      
+n, k = map(int, input().split()) 
+num = [0]*100001 
+num[n]=1 
+print(bfs())
