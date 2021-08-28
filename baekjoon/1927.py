@@ -4,7 +4,6 @@ import heapq
 numbers = int(input())
 heap = []
 
-#Max Heap
 for _ in range(numbers):
     num = int(sys.stdin.readline())
     if num != 0:
